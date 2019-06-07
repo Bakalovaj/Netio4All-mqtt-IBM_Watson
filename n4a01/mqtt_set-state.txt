@@ -1,0 +1,38 @@
+local topic = event.args.topic
+local payload = event.args.payload
+local report
+
+logf("mqtt received payload '%s' on topic '%s'", payload, topic)
+
+-- OUTPUT 1
+if topic == "iot-2/cmd/out1action/fmt/format_string" then
+devices.system.SetOut{output=1,value=payload}
+  -- report state
+	topic = "iot-2/evt/out1state/fmt/format_string"
+	report = devices.system["output1_state"]
+	devices.system.MqttPublish{topic=topic, payload=string.format(report)}
+end
+
+-- OUTPUT 2
+if topic == "iot-2/cmd/out2action/fmt/format_string" then
+devices.system.SetOut{output=2,value=payload}
+	topic = "iot-2/evt/out2state/fmt/format_string"
+	report = devices.system["output2_state"]
+	devices.system.MqttPublish{topic=topic, payload=string.format(report)}
+end
+
+-- OUTPUT 3
+if topic == "iot-2/cmd/out3action/fmt/format_string" then
+devices.system.SetOut{output=3,value=payload}
+	topic = "iot-2/evt/out3state/fmt/format_string"
+	report = devices.system["output3_state"]
+	devices.system.MqttPublish{topic=topic, payload=string.format(report)}
+end
+
+-- OUTPUT 4
+if topic == "iot-2/cmd/out4action/fmt/format_string" then
+devices.system.SetOut{output=4,value=payload}
+	topic = "iot-2/evt/out4state/fmt/format_string"
+	report = devices.system["output4_state"]
+	devices.system.MqttPublish{topic=topic, payload=string.format(report)}
+end

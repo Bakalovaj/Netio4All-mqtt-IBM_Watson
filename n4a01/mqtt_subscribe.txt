@@ -1,0 +1,19 @@
+-- OUTPUT 1
+local topic1 = "iot-2/cmd/out1action/fmt/format_string"
+devices.system.MqttLuaSubscribe{topic=topic1}
+logf("Subscribed to: %s", topic1)
+
+-- OUTPUT 2
+local topic2 = "iot-2/cmd/out2action/fmt/format_string"
+devices.system.MqttLuaSubscribe{topic=topic2}
+logf("Subscribed to: %s", topic2)
+
+-- OUTPUT 3
+local topic3 = "iot-2/cmd/out3action/fmt/format_string"
+devices.system.MqttLuaSubscribe{topic=topic3}
+logf("Subscribed to: %s", topic3)
+
+-- OUTPUT 4
+local topic4 = "iot-2/cmd/out4action/fmt/format_string"
+devices.system.MqttLuaSubscribe{topic=topic4}
+logf("Subscribed to: %s", topic4)

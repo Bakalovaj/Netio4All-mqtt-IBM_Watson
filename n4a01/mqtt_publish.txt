@@ -1,0 +1,56 @@
+-- voltage
+	local topic = "iot-2/evt/voltage/fmt/format_string"
+	local report = devices.system.voltage
+
+	devices.system.MqttPublish{topic=topic, payload=string.format(report)}
+
+-- frequency
+	local topic = "iot-2/evt/frequency/fmt/format_string"
+	local report = devices.system.frequency
+
+devices.system.MqttPublish{topic=topic, payload=string.format(report)}
+
+-- OUTPUT1
+local output = 1
+
+	local topic = "iot-2/evt/out"..output.."current/fmt/format_string"
+	local report = devices.system["output" .. output .. "_current"]
+	devices.system.MqttPublish{topic=topic, payload=string.format(report)}
+
+	local topic = "iot-2/evt/out"..output.."powerFactor/fmt/format_string"
+	local report = devices.system["output" .. output .. "_powerFactor"]
+	devices.system.MqttPublish{topic=topic, payload=string.format(report)}
+
+-- OUTPUT2
+output = 2
+
+	local topic = "iot-2/evt/out"..output.."current/fmt/format_string"
+	local report = devices.system["output" .. output .. "_current"]
+	devices.system.MqttPublish{topic=topic, payload=string.format(report)}
+
+	local topic = "iot-2/evt/out"..output.."powerFactor/fmt/format_string"
+	local report = devices.system["output" .. output .. "_powerFactor"]
+	devices.system.MqttPublish{topic=topic, payload=string.format(report)}
+
+-- OUTPUT3
+output = 3
+
+	local topic = "iot-2/evt/out"..output.."current/fmt/format_string"
+	local report = devices.system["output" .. output .. "_current"]
+	devices.system.MqttPublish{topic=topic, payload=string.format(report)}
+
+	local topic = "iot-2/evt/out"..output.."powerFactor/fmt/format_string"
+	local report = devices.system["output" .. output .. "_powerFactor"]
+	devices.system.MqttPublish{topic=topic, payload=string.format(report)}
+
+
+-- OUTPUT4
+output = 4
+
+	local topic = "iot-2/evt/out"..output.."current/fmt/format_string"
+	local report = devices.system["output" .. output .. "_current"]
+	devices.system.MqttPublish{topic=topic, payload=string.format(report)}
+
+	local topic = "iot-2/evt/out"..output.."powerFactor/fmt/format_string"
+	local report = devices.system["output" .. output .. "_powerFactor"]
+	devices.system.MqttPublish{topic=topic, payload=string.format(report)}
